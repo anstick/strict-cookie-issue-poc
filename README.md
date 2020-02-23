@@ -20,16 +20,21 @@ yarn start
 ```
 
 ## Tests
-# Test 1
+# No redidect
 Open https://oauthserver.strictcookies.poc.local:3000/
 
 Expected result: `document.cookie` contains `csrf_token` cookie.
 Actual result: the same.
 
-# Test 3
+# Server redirect
 Open https://integration.strictcookies.poc.local:3000/redirect
 
 Expected result: Redirected to https://oauthserver.strictcookies.poc.local:3000/ and document.cookie contains `csrf_token` cookie.
 Actual result: `document.cookie` is empty.
 
+# Client redirect
+Open https://integration.strictcookies.poc.local:3000/redirect_js
+
+Expected result: Redirected to https://oauthserver.strictcookies.poc.local:3000/ and document.cookie contains `csrf_token` cookie.
+Actual result: `document.cookie` is empty.
 

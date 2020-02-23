@@ -13,6 +13,10 @@ app.get('/redirect', function(req, res, next) {
   res.redirect('https://oauthserver.strictcookies.poc.local:3000/');
 });
 
+app.get('/redirect_js', function(req, res, next) {
+  res.render('redirect');
+});
+
 app.get('/', function(req, res, next) {
   const csrfToken = uuid();
   res
