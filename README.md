@@ -9,7 +9,7 @@ echo '127.0.0.1  oauthserver.strictcookies.poc.net' | sudo tee -a /etc/hosts
 
 Locally-trusted development certificates setup (https://github.com/FiloSottile/mkcert)
 ```
-mkcert install
+mkcert -install
 mkcert integration.strictcookies.poc.local oauthserver.strictcookies.poc.net
 ```
 
