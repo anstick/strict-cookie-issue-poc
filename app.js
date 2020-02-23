@@ -10,20 +10,17 @@ app.set('view engine', 'pug');
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/redirect', function(req, res, next) {
-  res.redirect('https://oauthserver.strictcookies.poc.local:3000/');
-});
-
-app.get('/redirect_js', function(req, res, next) {
-  res.render('redirect');
+  res.redirect('https://oauthserver.strictcookies.poc.net:3000/');
 });
 
 app.get('/', function(req, res, next) {
   const csrfToken = uuid();
   res
     .cookie('csrf_token', csrfToken, {
-      domain: 'oauthserver.strictcookies.poc.local',
+      domain: 'oauthserver.strictcookies.poc.net',
       httpOnly: false,
       secure: true,
+      path: "/",
       sameSite: 'Strict'
     })
     .render('index', { title: 'Login', csrfToken: csrfToken });
