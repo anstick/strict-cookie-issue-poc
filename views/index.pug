@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= title
+    script(type='text/javascript').
+      let DOMReady = function (a, b, c) {
+        b = document, c = 'addEventListener';
+        b[c] ? b[c]('DOMContentLoaded', a) : window.attachEvent('onload', a)
+      }
+
+      DOMReady(function () {
+        document.getElementById("cookie-span").innerText = document.cookie;
+      });
+  body
+    h1= title
+    p
+      span CSRF Token: #{csrfToken}
+    p
+      span document.cookie:&nbsp;
+        span(id='cookie-span')
+
